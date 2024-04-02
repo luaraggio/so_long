@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:34:36 by lraggio           #+#    #+#             */
-/*   Updated: 2024/03/27 21:03:52 by lraggio          ###   ########.fr       */
+/*   Updated: 2024/04/02 17:09:35 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ typedef struct		s_image
 
 typedef struct		s_data
 {
+	void	*mlx;
+	void	*mlx_win;
 	t_image		*image;
 	t_window	*window;
 	t_map		*place;

@@ -6,12 +6,11 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:19:12 by lraggio           #+#    #+#             */
-/*   Updated: 2023/11/22 17:19:18 by lraggio          ###   ########.fr       */
+/*   Updated: 2024/04/02 17:00:02 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio..h>
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -25,7 +24,8 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-/*int	main(void)
+/*#include <stdio.h>
+int	main(void)
 {
 	char	a[80] = "String de substituicao";
 	int	n;
