@@ -7,7 +7,7 @@ static int	is_rectangular(char **map)
 	i = 1;
 	if (!map)
 		return (0);
-	while (map[i] != '\0')
+	while (map[i])
 	{
 		if (ft_strlen(map[i]) != ft_strlen(map[0]))
 			return (0);
@@ -24,7 +24,7 @@ static int	is_wall(char **map)
 
 	j = 0;
 	i = 0;
-	while (map[i] != '\0')
+	while (map[i])
 		i++;
 	while (map[0][j] != '\0' && map[i - 1][j] != '\0')
 	{
@@ -52,7 +52,7 @@ static int	init_pec(t_data *game)
 	game->player = 0;
 	game->exit = 0;
 	i = 0;
-	while (game->map[i] != '\0')
+	while (game->map[i])
 	{
 		j = 0;
 		while (game->map[i][j] != '\0')
@@ -67,7 +67,7 @@ static int	init_pec(t_data *game)
 		}
 		i++;
 	}
-	if (game->player != 1 || game->exit == 0 || game->colect == 0)
+	if (game->player != 1 || game->exit == 0 || game->collectibles == 0)
 		return (0);
 	return (1);
 }
@@ -78,7 +78,7 @@ static int	is_validate(char **map)
 	int	j;
 
 	i = 0;
-	while (map[i] != '\0')
+	while (map[i])
 	{
 		j = 0;
 		while (map[i][j] != '\0')
@@ -93,9 +93,9 @@ static int	is_validate(char **map)
 	return (1);
 }
 
-int	map_checker(t_game *game)
+int	map_checker(t_data *game)
 {
-	if (is_rectangular(game->map) && is_wall(game->map) && is_pec(game)
+	if (is_rectangular(game->map) && is_wall(game->map) && init_pec(game)
 		&& is_validate(game->map))
 		return (1);
 	return (0);

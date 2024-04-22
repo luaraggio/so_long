@@ -6,16 +6,21 @@
 #    By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 13:13:46 by lraggio           #+#    #+#              #
-#    Updated: 2024/03/27 20:32:49 by lraggio          ###   ########.fr        #
+#    Updated: 2024/04/22 18:45:25 by lraggio          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-COMPILER = cc
-CFLAGS = -Wall -Wextra -Werror
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g
 
-SRCS = main.c\
-       map.c\
+SRCS =	main.c\
+	initializations.c\
+       	handle_map.c\
+	map_verifications.c\
+	play.c\
+	player_movements.c\
+	read_map.c	
 
 OBJS = ${SRCS:.c=.o}
 
@@ -24,30 +29,28 @@ INCLUDES = -I/usr/include -Imlx
 LIBFT = libft/libft.a
 MLX = mlx/libmlx.a
 
+
+MLX_FLAGS = -L/usr/lib/X11 -lXext -lX11
+
+all: $(NAME)
+
 $(LIBFT):
 	make -s -C libft
 
 $(MLX):
 	make -s -C mlx
-.c.o:
-	$(CC) $(CFLAGS) -c -o $@ $< $(INCLUDES)
 
-MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
- 
-$(NAME):	$(LIBFT) $(MLX) $(OBJS)
-		$(CC) $(CFLAGS) -o $(OBJS) $(LIBFT) $(MLX) $(NAME) $(MLX_FLAGS)
-		ar -rcs $(NAME) $(OBJS)
+$(NAME): $(LIBFT) $(MLX) $(OBJS)
+		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX) $(MLX_FLAGS) -o $(NAME)
 		@echo "Ready to play!"
-
-all: $(NAME)
 
 clean:
 	make clean -C libft
 	make clean -C mlx
+	rm -rf $(OBJS)
 
 fclean: clean
 	make fclean -C libft
 	rm -rf $(NAME)
 
 re:	fclean all
-

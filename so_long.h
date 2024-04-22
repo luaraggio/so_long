@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:34:36 by lraggio           #+#    #+#             */
-/*   Updated: 2024/04/02 17:09:35 by lraggio          ###   ########.fr       */
+/*   Updated: 2024/04/22 17:36:32 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "libft/libft.h"
 # include "mlx/mlx.h"
 # include <stdlib.h>
+# include <fcntl.h>
 
 // for moving with the keyboard arrows:
 enum	e_keys 
@@ -32,7 +33,7 @@ enum	e_keys
 	A = 97
 };
 
-typedef struct		s_data
+typedef struct	s_data
 {
 	void	*mlx;
 	void	*win;
@@ -55,5 +56,19 @@ typedef struct		s_data
 	void	*e_image;
 
 }	t_data;
+
+void	put_images(t_data *game, void *image, int x, int y);
+int	put_assets(t_data *game);
+void	game_init(t_data *game);
+int	map_checker(t_data *game);
+void	free_map(char **map);
+int	exit_game(t_data *game);
+void	key_move(t_data *game, int keycode);
+void	set_hooks(t_data *game);
+void	d_key(t_data *game);
+void	a_key(t_data *game);
+void	w_key(t_data *game);
+void	s_key(t_data *game);
+char	**read_map(char *file);
 
 #endif

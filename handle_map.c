@@ -8,11 +8,11 @@ void	put_images(t_data *game, void *image, int x, int y)
 
 static void	put_exit_image(t_data *game, int x, int y)
 {
-	if (game->collectibles == NULL)
+	if (game->collectibles == 0)
         {
 		mlx_destroy_image(game->mlx, game->e_image);
 		game->e_image = mlx_xpm_file_to_image
-			(game->mlx, "images/exit.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "images/exit.xpm", &game->image_width, &game->image_height);
         }
 	else
 		put_images(game, game->e_image, x, y);
@@ -41,7 +41,7 @@ int	put_assets(t_data *game)
 			else if (game->map[y][x] == '0')
 				put_images(game, game->zero_image, x, y);
 			else if (game->map[y][x] == 'P')
-				put_images(game, game->p_image, x, y);
+				put_player(game, game->p_image, x, y);
 			else if (game->map[y][x] == 'C')
 				put_images(game, game->c_image, x, y);
 			else if (game->map[y][x] == 'E')

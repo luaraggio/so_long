@@ -6,7 +6,7 @@
 /*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:05:34 by lraggio           #+#    #+#             */
-/*   Updated: 2024/01/22 17:50:53 by lraggio          ###   ########.fr       */
+/*   Updated: 2024/04/22 17:48:06 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*get_line_gnl(int fd, char *backup, char *str)
 	return (backup);
 }
 
-char	*get_backup(char *line)
+char	*get_backup_gnl(char *line)
 {
 	int		i;
 	char	*temporary;
