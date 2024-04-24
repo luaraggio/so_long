@@ -28,33 +28,33 @@ int	exit_game(t_data *game)
 	return (0);
 }
 
-void	key_move(t_data *game, int keycode)
+static void	key_move(t_data *game, int keycode)
 {
-	if (keycode == D || keycode == ARROW_RIGHT)
+	if (keycode == KEY_D || keycode == KEY_RIGHT)
 	{
-		game->x = game->x + 1;
+		game->x += 1;
 		d_key(game);
 	}
-	else if (keycode == A || keycode == ARROW_LEFT)
+	else if (keycode == KEY_A || keycode == KEY_LEFT)
 	{
-		game->x = game->x - 1;
+		game->x -= 1;
 		a_key(game);
 	}
-	else if (keycode == W || keycode == ARROW_UP)
+	else if (keycode == KEY_W || keycode == KEY_UP)
 	{
-		game->y = game->y - 1;
+		game->y -= 1;
 		w_key(game);
 	}
-	else if (keycode == S || keycode == ARROW_DOWN)
+	else if (keycode == KEY_S || keycode == KEY_DOWN)
 	{
-		game->y = game->y + 1;
+		game->y += 1;
 		s_key(game);
 	}
 }
 		
-/*static int	press_key(t_data *game, int keycode)
+static int	press_key(t_data *game, int keycode)
 {
-	if (keycode == ESC)
+	if (keycode == KEY_ESC || keycode == KEY_Q) 
 		exit_game(game);
 	else if (!game->exit)
 	{
@@ -62,12 +62,11 @@ void	key_move(t_data *game, int keycode)
 		ft_printf("Actual Movement: %d\n", game->moves);
 	}
 	return (0);
-}*/
+}
 
-/*void	set_hooks(t_data *game)
+void	set_hooks(t_data *game)
 {
-	mlx_key_hook(game->win, );
-	mlx_hook(game->win, 2, 0, press_key, game);
-	mlx_hook(game->win, 17, 0, exit_game, game);
-	mlx_hook(game->win, 9, 0, put_assets, game);
-}*/
+	mlx_hook(game->win, 2, 1L << 0, press_key, game);
+	mlx_hook(game->win, 17, 1L << 17, exit_game, game);
+	mlx_hook(game->win, 9, 1L << 21, put_assets, game);
+}

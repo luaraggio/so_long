@@ -20,18 +20,18 @@
 # include <fcntl.h>
 
 // for moving with the keyboard arrows:
-enum	e_keys 
-{
-	ESC = 65307,
-	ARROW_UP = 65362,
-	W = 119,
-	ARROW_DOWN = 65364,
-	S = 115,
-	ARROW_RIGHT = 65363,
-	D = 100,
-	ARROW_LEFT = 65361,
-	A = 97
-};
+# define KEY_ESC 65307
+# define KEY_Q 113
+
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
+
+# define KEY_UP 65362
+# define KEY_LEFT 65361
+# define KEY_DOWN 65364
+# define KEY_RIGHT 65363
 
 typedef struct	s_data
 {

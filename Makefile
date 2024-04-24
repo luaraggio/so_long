@@ -24,11 +24,8 @@ SRCS =	main.c\
 
 OBJS = ${SRCS:.c=.o}
 
-INCLUDES = -I/usr/include -Imlx
-
 LIBFT = libft/libft.a
 MLX = mlx/libmlx.a
-
 
 MLX_FLAGS = -L/usr/lib/X11 -lXext -lX11
 
