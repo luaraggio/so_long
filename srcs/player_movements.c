@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "../so_long.h"
 
 static void	image_atualization(t_data *game, char key)
 {
@@ -9,7 +9,7 @@ static void	image_atualization(t_data *game, char key)
 	else if (key == 'a')
 		game->p_image = mlx_xpm_file_to_image
 			(game->mlx, "images/player.xpm", &game->image_width, &game->image_height);
-	else if (key == 'w')	
+	else if (key == 'w')
 		game->p_image = mlx_xpm_file_to_image
 			(game->mlx, "images/player.xpm", &game->image_width, &game->image_height);
 	else if (key == 's')

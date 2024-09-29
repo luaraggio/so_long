@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+         #
+#    By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 13:13:46 by lraggio           #+#    #+#              #
-#    Updated: 2024/04/22 18:45:25 by lraggio          ###   ########.fr        #
+#    Updated: 2024/09/29 03:12:07 by lraggio          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,14 @@ NAME = so_long
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
-SRCS =	main.c\
-	initializations.c\
-       	handle_map.c\
-	map_verifications.c\
-	play.c\
-	player_movements.c\
-	read_map.c	
+SRCS =	srcs/main.c\
+		srcs/initializations.c\
+		srcs/handle_map.c\
+		srcs/map_verifications.c\
+		srcs/play.c\
+		srcs/player_movements.c\
+		srcs/read_map.c \
+		srcs/main.c
 
 OBJS = ${SRCS:.c=.o}
 
@@ -39,15 +40,20 @@ $(MLX):
 
 $(NAME): $(LIBFT) $(MLX) $(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX) $(MLX_FLAGS) -o $(NAME)
-		@echo "Ready to play!"
+		@echo "✅ Ready to play!"
 
 clean:
 	make clean -C libft
 	make clean -C mlx
 	rm -rf $(OBJS)
+	@echo "📤 Objects deleted"
 
 fclean: clean
 	make fclean -C libft
 	rm -rf $(NAME)
+	@echo "📤 Objects deleted"
 
 re:	fclean all
+
+val: re
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)

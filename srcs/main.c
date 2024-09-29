@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:47:32 by lraggio           #+#    #+#             */
-/*   Updated: 2024/04/22 20:42:56 by lraggio          ###   ########.fr       */
+/*   Updated: 2024/09/29 03:10:08 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static int      press_key(t_data *game, int keycode)
 {
-        if (keycode == ESC)
+        if (keycode == KEY_ESC)
                 exit_game(game);
         else if (!game->exit)
         {
@@ -67,6 +67,6 @@ int	main(int argc, char **argv)
         {
                 ft_printf("Error\nChoose a valid number of arguments.");
                 return (-1);
-        }	
+        }
 	return (0);
 }

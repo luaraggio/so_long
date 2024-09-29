@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   initializations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+        */
+/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:48:04 by lraggio           #+#    #+#             */
-/*   Updated: 2024/04/19 16:46:03 by lraggio          ###   ########.fr       */
+/*   Updated: 2024/09/29 03:08:20 by lraggio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static void	window_declare(t_data *game)
 {
 	int	counter;
 	int	width;
-	
+
 	width = ft_strlen(game->map[0]);
 	game->map_width = width * IMAGE_SIZE;
 	counter = 0;

@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "../so_long.h"
 
 void    free_map(char **map)
 {
@@ -51,10 +51,10 @@ static void	key_move(t_data *game, int keycode)
 		s_key(game);
 	}
 }
-		
+
 static int	press_key(t_data *game, int keycode)
 {
-	if (keycode == KEY_ESC || keycode == KEY_Q) 
+	if (keycode == KEY_ESC || keycode == KEY_Q)
 		exit_game(game);
 	else if (!game->exit)
 	{
