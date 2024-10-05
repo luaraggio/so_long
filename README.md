@@ -6,18 +6,7 @@
 </head>
 <body>
     <h1>So Long 🎮</h1>
-    <p>A simple 2D game developed in C where a character (dolphin, fish, or any other) escapes Earth after collecting items. Here's an overview of the project with instructions for setup and also a description of the game mechanics and components.</p>
-    <h2>Table of Contents</h2>
-    <ul>
-        <li><a href="#description">Description</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#game-mechanics">Game Mechanics</a></li>
-        <li><a href="#map-structure">Map Structure</a></li>
-        <li><a href="#graphics-management">Graphics Management</a></li>
-        <li><a href="#external-functions">External Functions</a></li>
-        <li><a href="#bonus-features">Bonus Features</a></li>
-    </ul>
-    <h2 id="description">Description</h2>
+    <p>A simple 2D game developed in C where a character (dolphin, fish, or any other) escapes Earth after collecting items (the collectibles are keys from Kingdom Hearts, as I'm a huge fan of it, btw). Here's an overview of the project with instructions for setup and also a description of the game mechanics and components.</p>
     <p>The goal of the game is to collect all collectibles present on the map and then escape by finding the exit. The game features basic movement controls and a top-down or profile view of the game world.</p>
     <h2 id="installation">Installation</h2>
     <p>What will you find in this project?</p>
@@ -41,13 +30,8 @@
         <li>The current number of movements is displayed in the shell after each move.</li>
         <li>Pressing <code>ESC</code> or clicking the window's close button will exit the game.</li>
     </ul>
-    <h3>Objectives</h3>
-    <ol>
-        <li>Collect every collectible on the map.</li>
-        <li>Find the exit (<code>E</code>) to complete the game.</li>
-    </ol>
-    <h2 id="map-structure">Map Structure</h2>
-    <p>The game map consists of three main components: walls, collectibles, and free space</p>
+    <h2 id="map-structure">Explaining the Map Structure</h2>
+    <p>The game map consists of three main components: walls, collectibles, and free space.</p>
     <ul>
         <li><code>0</code> - Empty space</li>
         <li><code>1</code> - Wall</li>
@@ -63,25 +47,24 @@
 1P0011E000001
 1111111111111
     </code></pre>
-    <p>The map must contain:</p>
+    <p> I needed to create a map that contains:</p>
     <ul>
         <li>1 exit</li>
         <li>At least 1 collectible</li>
         <li>1 starting position</li>
     </ul>
-    <p>If the map contains duplicate characters (exit/start), an error message will be displayed. The map must be rectangular and closed by walls.</p>
-    <h2 id="graphics-management">Graphics Management</h2>
-    <p>The game must display images in a window using MiniLibX. It must handle window management smoothly and allow the user to close the program cleanly.</p>
-    <h2 id="external-functions">External Functions</h2>
-    <p>The program uses the following external functions:</p>
+    <p>You can change the map format in code. See what happens if the map contains duplicate characters (exit/start). In addition, the map must be rectangular and closed by walls.</p>
+    <h2 id="graphics-management">What did I use for Graphics Management?</h2>
+    <p>The game displays images in a window using MiniLibX. It handles window management smoothly and allows the user to close the program cleanly.</p>
+    <h2 id="external-functions">What About External Functions?</h2>
+    <p>My program uses:</p>
     <ul>
         <li><code>open</code>, <code>close</code>, <code>read</code>, <code>write</code>, <code>malloc</code>, <code>free</code>, <code>perror</code>, <code>strerror</code>, <code>exit</code></li>
-        <li>All functions of the math library (use <code>-lm</code> compiler option).</li>
         <li>All functions of the MiniLibX.</li>
-        <li><code>ft_printf</code> and any equivalent functions you coded.</li>
+        <li><code>My version of printf function, called ft_printf.</code></li>
     </ul>
     <h2 id="bonus-features">Bonus Features</h2>
-    <p> I didn't use extra features for additional points, but if I want, you can:</p>
+    <p> I didn't use extra features for additional points, but, as long as you want:</p>
     <ul>
         <li>Make the player lose when they touch an enemy patrol.</li>
         <li>Add sprite animation.</li>
