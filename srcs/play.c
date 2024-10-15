@@ -28,7 +28,7 @@ int	exit_game(t_data *game)
 	return (0);
 }
 
-static void	key_move(t_data *game, int keycode)
+void	key_move(t_data *game, int keycode)
 {
 	if (keycode == KEY_D || keycode == KEY_RIGHT)
 	{
