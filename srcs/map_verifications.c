@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   map_verifications.c                                :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 03:08:26 by lraggio           #+#    #+#             */
-/*   Updated: 2024/09/29 03:08:29 by lraggio          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../so_long.h"
 
 static int	is_rectangular(char **map)
@@ -21,7 +9,7 @@ static int	is_rectangular(char **map)
 		return (0);
 	while (map[i])
 	{
-		if (ft_strlen(map[i]) != ft_strlen(map[0]))
+		if (my_strlen(map[i]) != my_strlen(map[0]))
 			return (0);
 		i++;
 	}
@@ -45,7 +33,7 @@ static int	is_wall(char **map)
 		j++;
 	}
 	i = 1;
-	len = ft_strlen(map[i]);
+	len = my_strlen(map[i]);
 	while (map[i])
 	{
 		if (map[i][0] != '1' || map[i][len - 1] != '1')

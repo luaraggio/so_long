@@ -59,7 +59,7 @@ static int	press_key(t_data *game, int keycode)
 	else if (!game->exit)
 	{
 		key_move(game, keycode);
-		ft_printf("Actual Movement: %d\n", game->moves);
+		my_printf("Actual Movement: %d\n", game->moves);
 	}
 	return (0);
 }

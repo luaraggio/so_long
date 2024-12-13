@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   initializations.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 17:48:04 by lraggio           #+#    #+#             */
-/*   Updated: 2024/09/29 03:08:20 by lraggio          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../so_long.h"
 
 static void	window_declare(t_data *game)
@@ -17,7 +5,7 @@ static void	window_declare(t_data *game)
 	int	counter;
 	int	width;
 
-	width = ft_strlen(game->map[0]);
+	width = my_strlen(game->map[0]);
 	game->map_width = width * IMAGE_SIZE;
 	counter = 0;
 	while (game->map[counter])
@@ -39,7 +27,7 @@ void	game_init(t_data *game)
 	game->mlx = mlx_init();
 	if (game->mlx == NULL)
 	{
-		ft_printf("Error\nSomething went wrong with image initialization");
+		my_printf("Error\nSomething went wrong with image initialization");
 		mlx_destroy_display(game->mlx);
 		free(game->mlx);
 		return ;

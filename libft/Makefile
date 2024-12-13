@@ -3,59 +3,59 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lraggio <lraggio@student.42.rio>           +#+  +:+       +#+         #
+#    By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 17:14:34 by lraggio           #+#    #+#              #
-#    Updated: 2024/03/25 18:18:55 by lraggio          ###   ########.fr        #
+#    Updated: 2024/12/13 17:44:28 by lraggio          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 COMPILER = gcc
 CFLAGS = -Wall -Wextra -Werror -I.
-SRCS =		ft_isalpha.c\
-		ft_isdigit.c\
-		ft_isalnum.c\
-		ft_isascii.c\
-		ft_isprint.c\
-		ft_strlen.c\
-		ft_memset.c\
-		ft_bzero.c\
-		ft_memcpy.c\
-		ft_memmove.c\
-		ft_strlcpy.c\
-		ft_strlcat.c\
-		ft_toupper.c\
-		ft_tolower.c\
-		ft_strchr.c\
-		ft_strrchr.c\
-		ft_strncmp.c\
-		ft_memchr.c\
-		ft_memcmp.c\
-		ft_strnstr.c\
-		ft_atoi.c\
-		ft_calloc.c\
-		ft_strdup.c\
-		ft_substr.c\
-		ft_strjoin.c\
-		ft_strtrim.c\
-		ft_split.c\
-		ft_itoa.c\
-		ft_strmapi.c\
-		ft_striteri.c\
-		ft_putchar_fd.c\
-		ft_putstr_fd.c\
-		ft_putendl_fd.c\
-		ft_putnbr_fd.c\
-		ft_itoa_base.c\
-		ft_print_char.c\
-		ft_print_decimal.c\
-		ft_printf.c\
-		ft_print_hexa.c\
-		ft_print_pointer.c\
-		ft_print_string.c\
-		ft_print_un.c\
-		ft_utoa_base.c\
+SRCS =		my_isalpha.c\
+		my_isdigit.c\
+		my_isalnum.c\
+		my_isascii.c\
+		my_isprint.c\
+		my_strlen.c\
+		my_memset.c\
+		my_bzero.c\
+		my_memcpy.c\
+		my_memmove.c\
+		my_strlcpy.c\
+		my_strlcat.c\
+		my_toupper.c\
+		my_tolower.c\
+		my_strchr.c\
+		my_strrchr.c\
+		my_strncmp.c\
+		my_memchr.c\
+		my_memcmp.c\
+		my_strnstr.c\
+		my_atoi.c\
+		my_calloc.c\
+		my_strdup.c\
+		my_substr.c\
+		my_strjoin.c\
+		my_strtrim.c\
+		my_split.c\
+		my_itoa.c\
+		my_strmapi.c\
+		my_striteri.c\
+		my_putchar_fd.c\
+		my_putstr_fd.c\
+		my_putendl_fd.c\
+		my_putnbr_fd.c\
+		my_itoa_base.c\
+		my_print_char.c\
+		my_print_decimal.c\
+		my_printf.c\
+		my_print_hexa.c\
+		my_print_pointer.c\
+		my_print_string.c\
+		my_print_un.c\
+		my_utoa_base.c\
 		get_next_line.c\
 		get_next_line_utils.c
 
@@ -64,16 +64,16 @@ OBJS = $(SRCS:.c=.o)
 RM = rm -rf
 
 all:	$(NAME)
-	
-$(NAME):	$(OBJS) 
+
+$(NAME):	$(OBJS)
 		ar -rcs $(NAME) $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME) 
+	$(RM) $(NAME)
 
 re:	fclean all
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re

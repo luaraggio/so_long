@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 16:05:34 by lraggio           #+#    #+#             */
-/*   Updated: 2024/04/22 17:48:06 by lraggio          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-size_t	ft_strlen_gnl(const char *str)
+size_t	my_strlen_gnl(const char *str)
 {
 	size_t	i;
 
@@ -37,11 +25,11 @@ char	*get_line_gnl(int fd, char *backup, char *str)
 			break ;
 		str[read_line] = '\0';
 		if (!backup)
-			backup = ft_strdup_gnl("");
+			backup = my_strdup_gnl("");
 		intermediary = backup;
-		backup = ft_strjoin_gnl(intermediary, str);
+		backup = my_strjoin_gnl(intermediary, str);
 		free(intermediary);
-		if (ft_strchr_gnl(backup, '\n') != NULL)
+		if (my_strchr_gnl(backup, '\n') != NULL)
 			break ;
 	}
 	return (backup);
@@ -57,7 +45,7 @@ char	*get_backup_gnl(char *line)
 		i++;
 	if (line[i] == '\0')
 		return (NULL);
-	temporary = ft_substr_gnl(line, i + 1, ft_strlen_gnl(line) - i);
+	temporary = my_substr_gnl(line, i + 1, my_strlen_gnl(line) - i);
 	if (*temporary == '\0')
 	{
 		free(temporary);

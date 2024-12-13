@@ -11,18 +11,18 @@ char    **read_map(char *path)
         fd = open(path, O_RDONLY);
         if (fd == -1)
                 return (NULL);
-        holder_map = ft_strdup("");
+        holder_map = my_strdup("");
         while (1)
         {
                 line = get_next_line_gnl(fd);
                 if (!line)
                         break ;
                 holder = holder_map;
-                holder_map = ft_strjoin(holder, line);
+                holder_map = my_strjoin(holder, line);
                 free(line);
                 free(holder);
         }
-        map = ft_split(holder_map, '\n');
+        map = my_split(holder_map, '\n');
         free(holder_map);
         close(fd);
         return (map);

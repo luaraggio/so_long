@@ -61,7 +61,7 @@
     <ul>
         <li><code>open</code>, <code>close</code>, <code>read</code>, <code>write</code>, <code>malloc</code>, <code>free</code>, <code>perror</code>, <code>strerror</code>, <code>exit</code></li>
         <li>All functions of the MiniLibX.</li>
-        <li><code>My version of printf function, called ft_printf.</code></li>
+        <li><code>My version of printf function, called my_printf.</code></li>
     </ul>
     <h2 id="bonus-features">Bonus Features</h2>
     <p> I didn't use extra features for additional points, but, as long as you want:</p>
