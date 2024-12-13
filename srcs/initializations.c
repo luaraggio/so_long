@@ -15,11 +15,11 @@ static void	window_declare(t_data *game)
 
 static void	declare_images(t_data *game)
 {
-	game->zero_image = mlx_xpm_file_to_image(game->mlx, "images/floor.xpm", &game->image_height, &game->image_width);
-	game->one_image = mlx_xpm_file_to_image(game->mlx, "images/wall.xpm", &game->image_height, &game->image_width);
-	game->e_image = mlx_xpm_file_to_image(game->mlx, "images/end.xpm", &game->image_height, &game->image_width);
-	game->c_image = mlx_xpm_file_to_image(game->mlx, "images/collectable.xpm", &game->image_height, &game->image_width);
-	game->p_image = mlx_xpm_file_to_image(game->mlx, "images/player.xpm", &game->image_height, &game->image_width);
+	game->zero_image = mlx_xpm_file_to_image(game->mlx, "img/floor.xpm", &game->image_height, &game->image_width);
+	game->one_image = mlx_xpm_file_to_image(game->mlx, "img/wall.xpm", &game->image_height, &game->image_width);
+	game->e_image = mlx_xpm_file_to_image(game->mlx, "img/end.xpm", &game->image_height, &game->image_width);
+	game->c_image = mlx_xpm_file_to_image(game->mlx, "img/collectable.xpm", &game->image_height, &game->image_width);
+	game->p_image = mlx_xpm_file_to_image(game->mlx, "img/player.xpm", &game->image_height, &game->image_width);
 }
 
 void	game_init(t_data *game)

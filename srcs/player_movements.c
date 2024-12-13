@@ -5,16 +5,16 @@ static void	image_atualization(t_data *game, char key)
 	mlx_destroy_image(game->mlx, game->p_image);
 	if (key == 'd')
 		game->p_image = mlx_xpm_file_to_image
-			(game->mlx, "images/player.xpm", &game->image_width, &game->image_height);
+			(game->mlx, "img/player.xpm", &game->image_width, &game->image_height);
 	else if (key == 'a')
 		game->p_image = mlx_xpm_file_to_image
-			(game->mlx, "images/player.xpm", &game->image_width, &game->image_height);
+			(game->mlx, "img/player.xpm", &game->image_width, &game->image_height);
 	else if (key == 'w')
 		game->p_image = mlx_xpm_file_to_image
-			(game->mlx, "images/player.xpm", &game->image_width, &game->image_height);
+			(game->mlx, "img/player.xpm", &game->image_width, &game->image_height);
 	else if (key == 's')
 		game->p_image = mlx_xpm_file_to_image
-			(game->mlx, "images/player.xpm", &game->image_width, &game->image_height);
+			(game->mlx, "img/player.xpm", &game->image_width, &game->image_height);
 }
 
 void	d_key(t_data *game)

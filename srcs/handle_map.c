@@ -12,7 +12,7 @@ static void	put_exit_image(t_data *game, int x, int y)
         {
 		mlx_destroy_image(game->mlx, game->e_image);
 		game->e_image = mlx_xpm_file_to_image
-			(game->mlx, "images/exit.xpm", &game->image_width, &game->image_height);
+			(game->mlx, "img/exit.xpm", &game->image_width, &game->image_height);
         }
 	put_images(game, game->e_image, x, y);
 }
