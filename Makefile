@@ -6,19 +6,13 @@
 #    By: lraggio <lraggio@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 13:13:46 by lraggio           #+#    #+#              #
-#    Updated: 2024/10/15 01:40:57 by lraggio          ###   ########.fr        #
+#    Updated: 2024/12/13 18:03:04 by lraggio          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 CC = cc
-CFLAGS = -g
-
-OS := $(shell uname)
-
-ifeq ($(OS), Darwin)
-	FRAMEWORKS = -framework Cocoa -framework OpenGL -framework IOKit
-endif
+CFLAGS = -Wall -Wextra -Werror -g
 
 SRCS =	srcs/main.c\
 		srcs/initializations.c\
@@ -32,38 +26,30 @@ SRCS =	srcs/main.c\
 OBJS = ${SRCS:.c=.o}
 
 LIBFT = libft/libft.a
-
-OS := $(shell uname)
-
-ifeq ($(OS), Darwin)
-    MLX = mlx_mac/libmlx42.a
-    MLX_FLAGS = -Iinclude -lglfw
-else
-    MLX = mlx/libmlx.a
-	MLX_FLAGS = -L/usr/lib/X11 -lXext -lX11
-endif
+MLX = mlx/libmlx.a
+MLX_FLAGS = -L/usr/lib/X11 -lXext -lX11
 
 all: $(NAME)
 
 $(LIBFT):
-	make -s -C libft
+	@make -s -C libft
 
 $(MLX):
-	make -s -C mlx
+	@make -s -C mlx
 
 $(NAME): $(LIBFT) $(MLX) $(OBJS)
-		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX) $(MLX_FLAGS) $(FRAMEWORKS) -o $(NAME)
+		@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX) $(MLX_FLAGS) -o $(NAME)
 		@echo "✅ Ready to play!"
 
 clean:
-	make clean -C libft
-	make clean -C mlx
-	rm -rf $(OBJS)
+	@make clean -C libft
+	@make clean -C mlx
+	@rm -rf $(OBJS)
 	@echo "📤 Objects deleted"
 
 fclean: clean
-	make fclean -C libft
-	rm -rf $(NAME)
+	@make fclean -C libft
+	@rm -rf $(NAME)
 	@echo "📤 Objects deleted"
 
 re:	fclean all
